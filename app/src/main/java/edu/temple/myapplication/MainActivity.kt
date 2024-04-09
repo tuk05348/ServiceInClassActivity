@@ -11,17 +11,14 @@ import android.widget.Button
 class MainActivity : AppCompatActivity() {
 
     var timerBinder: TimerService.TimerBinder? = null
-    var isConnected = false
 
     val serviceConnection = object : ServiceConnection {
         override fun onServiceConnected(p0: ComponentName?, p1: IBinder?) {
             timerBinder = p1 as TimerService.TimerBinder
-            isConnected = true
         }
 
         override fun onServiceDisconnected(p0: ComponentName?) {
             timerBinder = null
-            isConnected = false
         }
 
     }
@@ -37,15 +34,15 @@ class MainActivity : AppCompatActivity() {
         )
 
         findViewById<Button>(R.id.startButton).setOnClickListener {
-            if (isConnected) timerBinder?.start(100)
+            timerBinder?.start(100)
         }
 
         findViewById<Button>(R.id.pauseButton).setOnClickListener {
-            if (isConnected) timerBinder?.pause()
+            timerBinder?.pause()
         }
         
         findViewById<Button>(R.id.stopButton).setOnClickListener {
-            if (isConnected) timerBinder?.stop()
+            timerBinder?.stop()
         }
     }
 
