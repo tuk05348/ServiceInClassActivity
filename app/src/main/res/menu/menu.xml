@@ -3,17 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/start"
+        android:id="@+id/action_start_timer"
         android:icon="@drawable/play_circle_fill0_wght400_grad0_opsz24"
         android:title="Start"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/stop"
+        android:id="@+id/action_stop_timer"
         android:icon="@drawable/stop_circle_fill0_wght400_grad0_opsz24"
         android:title="Stop"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/pause"
+        android:id="@+id/action_pause_timer"
         android:icon="@drawable/pause_circle_fill0_wght400_grad0_opsz24"
         android:title="Pause"
         app:showAsAction="ifRoom" />
